@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+        :root {
+            --border-radius: 0px;
+            --left-part-background: linear-gradient(to bottom right, rgb(50, 66, 91), rgb(54, 208, 236));
+            --right-part-background: rgb(50, 66, 91);
+            --button-color: rgb(31, 214, 189);
+            --text-color: white;
+            --font: 'Inter', sans-serif;
+
+        }
+
+        .container {
+            /* Remove it while intigrating this form to your website */
+            display: flex;
+            justify-content: center;
+            padding: 20%;
+        }
+
+        .registration {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .box {
+            width: 350px;
+        }
+
+        .left-part {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: var(--left-part-background);
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+        }
+
+        .left-part img {
+            width: 150px;
+            filter: drop-shadow(0px 1px 10px white);
+        }
+
+        .right-part {
+            display: flex;
+            justify-content: center;
+            background-color: var(--right-part-background);
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+        }
+
+        @media only screen and (max-width: 700px) {
+            .registration{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .left-part {
+                display: none;
+            }
+        }
+
+        .head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        #registration-title {
+            color: var(--text-color);
+            font-family: var(--font);
+            letter-spacing: 0.2rem;
+            margin: 0px;
+        }
+
+        #registration-caption {
+            color: var(--button-color);
+            font-family: var(--font);
+            font-size: 0.7rem;
+            margin: 0px;
+            word-spacing: 0.1rem;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .inputs input {
+            position: relative;
+            border: 1px solid white;
+            color: rgb(216, 216, 216);
+            background-color: var(--right-part-background);
+            height: 1.4rem;
+        }
+
+        .input label {
+            font-size: 0.7rem;
+            font-family: var(--font);
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        #term_conditions {
+            align-self: flex-start;
+        }
+
+        .input input::placeholder {
+            font-family: var(--font);
+            color: rgb(216, 216, 216);
+            font-size: 0.7rem;
+        }
+
+        .term-checkbox {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+            font-family: var(--font);
+            font-size: 0.2rem;
+            width: 200px;
+        }
+
+        .term_conditions:checked {
+            background-color: var();
+        }
+
+        .submit-button {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .submit-button button {
+            background-color: var(--button-color);
+            border: none;
+            height: 1.4rem;
+            font-size: 0.7rem;
+            font-family: var(--font);
+            color: var(--text-color);
+        }
+
+        .submit-button a {
+            align-self: center;
+            font-family: var(--font);
+            font-size: 0.5rem;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="registration">
+            <div class="left-part box">
+                <img src="media/web_logo.png"
+                    alt="web_logo">
+            </div>
+            <div class="right-part box">
+                <form action="/">
+                    <div class="head">
+                        <p id="registration-title">REGISTER</p>
+                        <p id="registration-caption">IT'S COMPLETELY FREE</p>
+                    </div>
+                    <div class="inputs">
+                        <div class="input">
+                            <label for="Name">NAME</label>
+                            <input type="text"
+                                name="Name"
+                                placeholder="Your full name">
+                        </div>
+                        <div class="input">
+                            <label for="UserName">USERNAME</label>
+                            <input type="text"
+                                name="UserName"
+                                placeholder="Username">
+                        </div>
+                        <div class="input">
+                            <label for="Email">EMAIL</label>
+                            <input type="email"
+                                name="Email"
+                                placeholder="Email address">
+                        </div>
+                        <div class="input">
+                            <label for="PhoneNumber">PHONE NUMBER</label>
+                            <input type="number"
+                                name="PhoneNumber"
+                                placeholder="Phone number">
+                        </div>
+                        <div class="input">
+                            <label for="Password">PASSWORD</label>
+                            <input type="password"
+                                name="Password"
+                                placeholder="Password">
+                        </div>
+                        <div class="input">
+                            <label for="C-Password">CONFIRM PASSWORD</label>
+                            <input type="text"
+                                name="C-Password"
+                                placeholder="Confirm password">
+                        </div>
+                        <div class="term-checkbox">
+                            <input type="checkbox"
+                                name="terms-check"
+                                id="term_conditions">
+                            <label for="terms-check">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Doloribus, totam?</label>
+                        </div>
+                        <div class="submit-button">
+                            <button type="submit">CREATE ACCOUNT</button>
+                            <a href="/">I'am already a member</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
